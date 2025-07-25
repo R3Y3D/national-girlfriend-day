@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Girlfriend Day 2025 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #e91e63;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .game-info {
+            background: #ffe0e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #e91e63;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-info {
+            padding: 15px;
+        }
+
+        .photo-title {
+            font-weight: bold;
+            color: #e91e63;
+            margin-bottom: 5px;
+        }
+
+        .photo-date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .hidden-photos {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .unlock-button {
+            background: linear-gradient(45deg, #e91e63, #ff6b9d);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .unlock-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+        }
+
+        .hidden-gallery {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hidden-gallery.revealed {
+            display: grid;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .score {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .gallery { grid-template-columns: 1fr; }
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <header>
+            <h1>💕 National Girlfriend Day 2025 💕</h1>
+            <p class="subtitle">A Special Collection of Beautiful Memories</p>
+            <div class="score">Photos Found: <span id="photoCount">0</span>/8</div>
+        </header>
+
+        <div class="game-info">
+            <strong>🎮 Photo Hunt Game:</strong> Click on photos to discover hidden memories! Some photos reveal special surprises when you find them all. Can you unlock the secret gallery?
+        </div>
+
+        <div class="gallery" id="mainGallery">
+            <!-- Regular photos - Replace these URLs with your Google Photos links -->
+            <div class="photo-card" onclick="openModal('photo1'); markFound(this)">
+                <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400" alt="Beautiful Moment 1" id="photo1">
+                <div class="photo-info">
+                    <div class="photo-title">Our First Adventure</div>
+                    <div class="photo-date">February 14, 2024</div>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('photo2'); markFound(this)">
+                <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=400" alt="Beautiful Moment 2" id="photo2">
+                <div class="photo-info">
+                    <div class="photo-title">Sunset Together</div>
+                    <div class="photo-date">March 20, 2024</div>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('photo3'); markFound(this)">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400" alt="Beautiful Moment 3" id="photo3">
+                <div class="photo-info">
+                    <div class="photo-title">Coffee & Laughs</div>
+                    <div class="photo-date">April 15, 2024</div>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('photo4'); markFound(this)">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400" alt="Beautiful Moment 4" id="photo4">
+                <div class="photo-info">
+                    <div class="photo-title">Beach Day</div>
+                    <div class="photo-date">May 30, 2024</div>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('photo5'); markFound(this)">
+                <img src="https://images.unsplash.com/photo-1521747116042-5a810fda9664?w=400" alt="Beautiful Moment 5" id="photo5">
+                <div class="photo-info">
+                    <div class="photo-title">City Exploration</div>
+                    <div class="photo-date">June 18, 2024</div>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('photo6'); markFound(this)">
+                <img src="https://images.unsplash.com/photo-1542103749-8ef59b94f47e?w=400" alt="Beautiful Moment 6" id="photo6">
+                <div class="photo-info">
+                    <div class="photo-title">Cozy Evening</div>
+                    <div class="photo-date">July 4, 2024</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden-photos">
+            <h2>🔒 Secret Memory Vault</h2>
+            <p>Find all photos above to unlock the special collection!</p>
+            <button class="unlock-button" id="unlockBtn" onclick="unlockHidden()" disabled>
+                Unlock Secret Photos (0/6 found)
+            </button>
+            
+            <div class="hidden-gallery" id="hiddenGallery">
+                <div class="photo-card" onclick="openModal('hidden1')">
+                    <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?w=300" alt="Secret Memory 1" id="hidden1">
+                    <div class="photo-info">
+                        <div class="photo-title">Secret Surprise 1</div>
+                        <div class="photo-date">Special Moment</div>
+                    </div>
+                </div>
+                
+                <div class="photo-card" onclick="openModal('hidden2')">
+                    <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=300" alt="Secret Memory 2" id="hidden2">
+                    <div class="photo-info">
+                        <div class="photo-title">Secret Surprise 2</div>
+                        <div class="photo-date">Hidden Gem</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for enlarged photos -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        let photosFound = 0;
+        const totalPhotos = 6;
+        let foundPhotos = new Set();
+
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💖';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 6 + 's';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        function markFound(element) {
+            if (!element.classList.contains('found')) {
+                element.classList.add('found');
+                element.style.border = '3px solid #4CAF50';
+                
+                const photoId = element.querySelector('img').id;
+                if (!foundPhotos.has(photoId)) {
+                    foundPhotos.add(photoId);
+                    photosFound++;
+                    updateScore();
+                    
+                    // Add celebration effect
+                    createCelebration(element);
+                }
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('photoCount').textContent = photosFound;
+            const unlockBtn = document.getElementById('unlockBtn');
+            
+            if (photosFound >= totalPhotos) {
+                unlockBtn.disabled = false;
+                unlockBtn.textContent = 'Unlock Secret Photos ✨';
+                unlockBtn.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
+            } else {
+                unlockBtn.textContent = `Unlock Secret Photos (${photosFound}/${totalPhotos} found)`;
+            }
+        }
+
+        function createCelebration(element) {
+            for (let i = 0; i < 10; i++) {
+                const spark = document.createElement('div');
+                spark.innerHTML = '✨';
+                spark.style.position = 'absolute';
+                spark.style.pointerEvents = 'none';
+                spark.style.color = '#FFD700';
+                spark.style.fontSize = '20px';
+                
+                const rect = element.getBoundingClientRect();
+                spark.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                spark.style.top = (rect.top + Math.random() * rect.height) + 'px';
+                
+                document.body.appendChild(spark);
+                
+                setTimeout(() => {
+                    spark.style.transition = 'all 1s ease';
+                    spark.style.transform = 'translateY(-50px)';
+                    spark.style.opacity = '0';
+                    setTimeout(() => spark.remove(), 1000);
+                }, 100);
+            }
+        }
+
+        function unlockHidden() {
+            if (photosFound >= totalPhotos) {
+                const hiddenGallery = document.getElementById('hiddenGallery');
+                hiddenGallery.classList.add('revealed');
+                
+                document.querySelector('.hidden-photos h2').innerHTML = '🎉 Secret Memory Vault Unlocked! 🎉';
+                document.querySelector('.hidden-photos p').innerHTML = 'Congratulations! You found all the photos! Here are some extra special memories just for you! 💕';
+                
+                // Hide unlock button
+                document.getElementById('unlockBtn').style.display = 'none';
+            }
+        }
+
+        function openModal(photoId) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const img = document.getElementById(photoId);
+            
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Initialize hearts animation
+        createHearts();
+        
+        // Update hearts periodically
+        setInterval(() => {
+            document.getElementById('hearts').innerHTML = '';
+            createHearts();
+        }, 10000);
+    </script>
+</body>
+</html>
