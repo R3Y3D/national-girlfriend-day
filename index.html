@@ -429,13 +429,17 @@
                     </div>
                 </div>
 
-                <div class="photo-card" onclick="openModal('photo3'); markFound(this)">
-                    <img src="video1.mp4" alt="Beautiful Moment 3" id="photo3">
-                    <div class="photo-info">
-                        <div class="photo-title">Coffee & Laughs</div>
-                        <div class="photo-date">April 15, 2024</div>
-                    </div>
-                </div>
+                <div class="photo-card" onclick="openVideoModal('video1'); markFound(this)">
+        <video id="video1" muted playsinline poster="video-thumbnail.jpg" width="100%">
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">▶️ Tap to Play</div>
+        <div class="photo-info">
+            <div class="photo-title">Coffee & Laughs</div>
+            <div class="photo-date">April 15, 2024</div>
+        </div>
+    </div>
 
                 <div class="photo-card" onclick="openModal('photo4'); markFound(this)">
                     <img src="photo3.jpg" alt="Beautiful Moment 4" id="photo4">
