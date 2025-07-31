@@ -404,7 +404,7 @@
             <header>
                 <h1>🩷🩷National Girlfriend Day Clover!🩷🩷</h1>
                 <p class="subtitle">A Special Collection of Beautiful Memories</p>
-                <div class="score">Photos Found: <span id="photoCount">0</span>/6</div>
+                <div class="score">Photos Found: <span id="photoCount">0</span>/5</div>
             </header>
 
             <div class="game-info">
@@ -431,16 +431,16 @@
                 </div>
 
                 <div class="photo-card" onclick="openVideoModal('video1'); markFound(this)">
-        <video id="video1" muted playsinline poster="video-thumbnail.jpg" width="100%">
-            <source src="video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay">▶️ Tap to Play</div>
-        <div class="photo-info">
-            <div class="photo-title">Goofy Ah Photo Booth</div>
-            <div class="photo-date">July 17th, 2025</div>
-        </div>
-    </div>
+                    <video id="video1" muted playsinline poster="video-thumbnail.jpg" width="100%">
+                        <source src="video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">▶️ Tap to Play</div>
+                    <div class="photo-info">
+                        <div class="photo-title">Goofy Ah Photo Booth</div>
+                        <div class="photo-date">July 17th, 2025</div>
+                    </div>
+                </div>
 
                 <div class="photo-card" onclick="openModal('photo4'); markFound(this)">
                     <img src="photo3.jpg" alt="Beautiful Moment 4" id="photo4">
@@ -459,7 +459,7 @@
                 </div>
 
                 <div class="photo-card" onclick="openModal('photo6'); markFound(this)">
-                    <img src="photo5.jpg"Beautiful Moment 6" id="photo6">
+                    <img src="photo5.jpg" alt="Beautiful Moment 6" id="photo6">
                     <div class="photo-info">
                         <div class="photo-title">My beautiful Princessa🩷🩷 <3</div>
                         <div class="photo-date">November 29th, 2024</div>
@@ -471,11 +471,11 @@
                 <h2>🔒 Secret Memory Vault</h2>
                 <p>Find all photos above to unlock the special collection!</p>
                 <button class="unlock-button" id="unlockBtn" onclick="unlockHidden()" disabled>
-                    Unlock Secret Photos (0/6 found)
+                    Unlock Secret Photos (0/5 found)
                 </button>
                 
                 <div class="hidden-gallery" id="hiddenGallery">
-                    <!-- Only one special video in the secret vault -->
+                    <!-- First special video in the secret vault -->
                     <div class="photo-card" onclick="openVideoModal('secretVideo'); playSecretVideo()">
                         <video id="secretVideo" muted poster="">
                             <source src="video3.mp4" type="video/mp4">
@@ -485,6 +485,19 @@
                         <div class="photo-info">
                             <div class="photo-title">💕 :3 Hope you would love this video Mi Amor 🩷🩷 💕</div>
                             <div class="photo-date">Just For You ✨</div>
+                        </div>
+                    </div>
+
+                    <!-- Second special video in the secret vault -->
+                    <div class="photo-card" onclick="openVideoModal('secretVideo2'); playSecretVideo()">
+                        <video id="secretVideo2" muted poster="">
+                            <source src="video2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">💗 Watch Another Surprise</div>
+                        <div class="photo-info">
+                            <div class="photo-title">For you, mi princesa 💕</div>
+                            <div class="photo-date">Extra Love from R3Y3D</div>
                         </div>
                     </div>
                 </div>
@@ -508,9 +521,14 @@
         <!-- Remove 'loop' attribute above if you want music to play only once -->
     </audio>
 
+    <!-- Trademark Footer -->
+    <footer style="text-align:center; margin: 40px 0; color: #999; font-size: 0.9em;">
+        ™ Created with love by R3Y3D
+    </footer>
+
     <script>
         let photosFound = 0;
-        const totalPhotos = 6;
+        const totalPhotos = 5;
         let foundPhotos = new Set();
         let musicPlaying = false;
         let noClickCount = 0;
