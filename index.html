@@ -186,6 +186,35 @@
             transform: scale(1.05);
         }
 
+        /* Video styles */
+        .photo-card video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover video {
+            transform: scale(1.05);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            pointer-events: none;
+            font-size: 2em;
+        }
+
+        .photo-card {
+            position: relative;
+        }
+
         .photo-info {
             padding: 15px;
         }
@@ -373,7 +402,7 @@
         
         <div class="container">
             <header>
-                <h1>🩷 National Girlfriend Day Clover!! 🩷</h1>
+                <h1>🩷🩷National Girlfriend Day Clover!🩷🩷</h1>
                 <p class="subtitle">A Special Collection of Beautiful Memories</p>
                 <div class="score">Photos Found: <span id="photoCount">0</span>/6</div>
             </header>
@@ -385,7 +414,7 @@
             <div class="gallery" id="mainGallery">
                 <!-- Regular photos - Replace these URLs with your Google Photos links -->
                 <div class="photo-card" onclick="openModal('photo1'); markFound(this)">
-                    <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400" alt="Beautiful Moment 1" id="photo1">
+                    <img src="photo1.jpg" alt="Beautiful Moment 1" id="photo1">
                     <div class="photo-info">
                         <div class="photo-title">Our First Adventure</div>
                         <div class="photo-date">February 14, 2024</div>
@@ -393,7 +422,7 @@
                 </div>
 
                 <div class="photo-card" onclick="openModal('photo2'); markFound(this)">
-                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=400" alt="Beautiful Moment 2" id="photo2">
+                    <img src="photo2.jpg" alt="Beautiful Moment 2" id="photo2">
                     <div class="photo-info">
                         <div class="photo-title">Sunset Together</div>
                         <div class="photo-date">March 20, 2024</div>
@@ -401,7 +430,7 @@
                 </div>
 
                 <div class="photo-card" onclick="openModal('photo3'); markFound(this)">
-                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400" alt="Beautiful Moment 3" id="photo3">
+                    <img src="video1.mp4" alt="Beautiful Moment 3" id="photo3">
                     <div class="photo-info">
                         <div class="photo-title">Coffee & Laughs</div>
                         <div class="photo-date">April 15, 2024</div>
@@ -409,7 +438,7 @@
                 </div>
 
                 <div class="photo-card" onclick="openModal('photo4'); markFound(this)">
-                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400" alt="Beautiful Moment 4" id="photo4">
+                    <img src="photo3.jpg" alt="Beautiful Moment 4" id="photo4">
                     <div class="photo-info">
                         <div class="photo-title">Beach Day</div>
                         <div class="photo-date">May 30, 2024</div>
@@ -417,7 +446,7 @@
                 </div>
 
                 <div class="photo-card" onclick="openModal('photo5'); markFound(this)">
-                    <img src="https://images.unsplash.com/photo-1521747116042-5a810fda9664?w=400" alt="Beautiful Moment 5" id="photo5">
+                    <img src="photo 4.jpg" alt="Beautiful Moment 5" id="photo5">
                     <div class="photo-info">
                         <div class="photo-title">City Exploration</div>
                         <div class="photo-date">June 18, 2024</div>
@@ -425,7 +454,7 @@
                 </div>
 
                 <div class="photo-card" onclick="openModal('photo6'); markFound(this)">
-                    <img src="https://images.unsplash.com/photo-1542103749-8ef59b94f47e?w=400" alt="Beautiful Moment 6" id="photo6">
+                    <img src="photo5.PNG"Beautiful Moment 6" id="photo6">
                     <div class="photo-info">
                         <div class="photo-title">Cozy Evening</div>
                         <div class="photo-date">July 4, 2024</div>
@@ -441,19 +470,16 @@
                 </button>
                 
                 <div class="hidden-gallery" id="hiddenGallery">
-                    <div class="photo-card" onclick="openModal('hidden1')">
-                        <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?w=300" alt="Secret Memory 1" id="hidden1">
+                    <!-- Only one special video in the secret vault -->
+                    <div class="photo-card" onclick="openVideoModal('secretVideo'); playSecretVideo()">
+                        <video id="secretVideo" muted poster="">
+                            <source src="secret-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">💖 Play Special Video</div>
                         <div class="photo-info">
-                            <div class="photo-title">Secret Surprise 1</div>
-                            <div class="photo-date">Special Moment</div>
-                        </div>
-                    </div>
-                    
-                    <div class="photo-card" onclick="openModal('hidden2')">
-                        <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=300" alt="Secret Memory 2" id="hidden2">
-                        <div class="photo-info">
-                            <div class="photo-title">Secret Surprise 2</div>
-                            <div class="photo-date">Hidden Gem</div>
+                            <div class="photo-title">💕 Our Most Special Memory 💕</div>
+                            <div class="photo-date">Just For You ✨</div>
                         </div>
                     </div>
                 </div>
@@ -461,16 +487,20 @@
         </div>
     </div>
 
-    <!-- Modal for enlarged photos -->
+    <!-- Modal for enlarged photos and videos -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
+        <img class="modal-content" id="modalImage" style="display: none;">
+        <video class="modal-content" id="modalVideo" controls style="display: none;">
+            <source src="" type="video/mp4">
+        </video>
     </div>
 
     <!-- Background Music -->
     <audio id="backgroundMusic" loop>
-        <source src="chiikawa music.mp3" type="audio/mpeg">
+        <source src="background-music.mp3" type="audio/mpeg">
         <!-- Add your music file here -->
+        <!-- Remove 'loop' attribute above if you want music to play only once -->
     </audio>
 
     <script>
@@ -703,14 +733,61 @@
         function openModal(photoId) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
+            const modalVideo = document.getElementById('modalVideo');
             const img = document.getElementById(photoId);
             
             modal.style.display = 'block';
             modalImg.src = img.src;
+            modalImg.style.display = 'block';
+            modalVideo.style.display = 'none';
+        }
+
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalVideo = document.getElementById('modalVideo');
+            const video = document.getElementById(videoId);
+            
+            modal.style.display = 'block';
+            modalVideo.src = video.querySelector('source').src;
+            modalVideo.style.display = 'block';
+            modalImg.style.display = 'none';
+            
+            // Auto play the video in modal
+            modalVideo.play();
+        }
+
+        function playSecretVideo() {
+            // Add extra celebration when secret video is played
+            createMegaCelebration();
+            
+            // Optional: Change background music or add special effects
+            const secretMsg = document.createElement('div');
+            secretMsg.innerHTML = '💖 You found our most special memory! 💖';
+            secretMsg.style.position = 'fixed';
+            secretMsg.style.top = '20px';
+            secretMsg.style.left = '50%';
+            secretMsg.style.transform = 'translateX(-50%)';
+            secretMsg.style.background = 'rgba(233, 30, 99, 0.9)';
+            secretMsg.style.color = 'white';
+            secretMsg.style.padding = '15px 30px';
+            secretMsg.style.borderRadius = '25px';
+            secretMsg.style.fontSize = '1.2em';
+            secretMsg.style.zIndex = '10000';
+            secretMsg.style.animation = 'fadeIn 1s ease';
+            
+            document.body.appendChild(secretMsg);
+            
+            setTimeout(() => secretMsg.remove(), 4000);
         }
 
         function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
+            const modal = document.getElementById('imageModal');
+            const modalVideo = document.getElementById('modalVideo');
+            
+            modal.style.display = 'none';
+            modalVideo.pause(); // Pause video when modal closes
+            modalVideo.currentTime = 0; // Reset video to beginning
         }
     </script>
 </body>
